@@ -1,0 +1,102 @@
+@import "normalize.css";
+/* designed for small-screen first */
+body {
+  background-color: rgba(21, 119, 238, 0.5);
+}
+/*sets grid into a one column layout */
+.grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 15px;
+}
+/*format for grid items */
+.grid-item {
+  background-color: rgb(194, 218, 255);
+  border-width: 8px;
+  border-style: inset;
+  border-color: rgb(194, 228, 255);
+  font-size: 25px;
+  padding: 9px;
+  text-align: center;
+}
+/*text formatting */
+h1,
+h2,
+h3,
+p,
+#navigation {
+  margin-top: 15px;
+  text-align: center;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  letter-spacing: 0.2px;
+  font-variant: small-caps;
+}
+
+/*different shadow for headings */
+h1,
+h2 {
+  text-shadow: 4px 4px 6px rgba(6, 138, 214, 0.5);
+}
+
+/*makes images responsive */
+img {
+  width: 50%;
+}
+
+/*formatting for link, including normal formatting, when clicked, and when hovered */
+.canva:hover {
+  text-shadow: 4px 4px 6px rgba(6, 138, 214, 0.5);
+}
+
+.canva,
+.canva:focus,
+.canva:active {
+  color: rgb(0, 132, 255);
+}
+/*fixes text that might be too small */
+.larger {
+  font-size: xx-large;
+}
+/*formatting for emphasized words */
+.stronger {
+  text-shadow: 2px 2px 3px rgba(6, 138, 214, 0.5);
+  font-style: italic;
+  font-weight: bold;
+}
+/*formatting for viewports larger than 560px but not larger than 1024px */
+@media screen and (min-width: 560px) {
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto; /*two c0olumn grid */
+    grid-gap: 15px;
+  }
+
+  .head {
+    grid-column: 1 / span 2; /*makes heading fill the entire top part */
+  }
+
+  .text {
+    grid-column: 1 / span 2; /*makes text section fill out the entire bottom */
+  }
+}
+/*formatting for viewports larger than 1024px*/
+@media screen and (min-width: 1024px) {
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto auto; /*three column grid */
+    grid-gap: 15px;
+    height: 100vh;
+  }
+
+  .head {
+    grid-column: 1 / span 3; /*makes heading fill the entire top part */
+    grid-row: 1 / span 1.5;
+  }
+
+  .description {
+    grid-column: 1 / span 3;
+  }
+  .text {
+    grid-column: 1 / span 3; /*makes text section fill out the entire bottom */
+  }
+}
